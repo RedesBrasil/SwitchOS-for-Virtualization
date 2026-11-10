@@ -169,7 +169,7 @@ Procure a linha do `mikrotik` (`Ctrl+W`, digite `mikrotik`, `Enter`) e **adicion
 
 ```php
     'mikrotik'    =>  'MikroTik RouterOS',
-    'mk-switchos' =>  'SwitchOS for Virtualization',
+    'mk-switchos' =>  'MikroTik SwitchOS',
 ```
 
 - O texto entre aspas (`mk-switchos`) deve ser igual ao nome do arquivo `.php`, sem o `.php`.
@@ -208,7 +208,7 @@ Crie o template na pasta correspondente (o exemplo usa `amd`; troque por `intel`
 cat > /opt/unetlab/html/templates/amd/mk-switchos.yml << 'EOT'
 ---
 type: qemu
-description: SwitchOS for Virtualization
+description: MikroTik SwitchOS
 name: SwitchOS
 cpulimit: 1
 icon: Switch.png
@@ -229,7 +229,7 @@ Cuidado com o YAML: indente com espaços (nunca Tab) e sempre deixe um espaço d
 
 1. Abra o EVE-NG no navegador e faça login.
 2. Abra um laboratório e clique em **Add Node** (ícone `+`).
-3. Procure por **SwitchOS** e selecione a versão **1.0**.
+3. Procure por **MikroTik SwitchOS** e selecione a versão **1.0**.
 4. Clique em **Add**.
 
 Pontos importantes:
@@ -324,7 +324,7 @@ cat > /opt/unetlab/html/templates/mk-switchos.php << 'EOT'
 # vim: syntax=php tabstop=4 softtabstop=0 noexpandtab laststatus=1 ruler
 
 $p['type'] = 'qemu';
-$p['name'] = 'SwitchOS for Virtualization';
+$p['name'] = 'SwitchOS';
 $p['cpulimit'] = 1;
 $p['icon'] = 'Switch.png';
 $p['cpu'] = 1;
@@ -354,7 +354,7 @@ Find the `mikrotik` line (`Ctrl+W`, type `mikrotik`, `Enter`) and **add one line
 
 ```php
     'mikrotik'    =>  'MikroTik RouterOS',
-    'mk-switchos' =>  'SwitchOS for Virtualization',
+    'mk-switchos' =>  'MikroTik SwitchOS',
 ```
 
 - The quoted text (`mk-switchos`) must match the `.php` file name, without the `.php`.
@@ -393,7 +393,7 @@ Create the template in the matching folder (the example uses `amd`; use `intel` 
 cat > /opt/unetlab/html/templates/amd/mk-switchos.yml << 'EOT'
 ---
 type: qemu
-description: SwitchOS for Virtualization
+description: MikroTik SwitchOS
 name: SwitchOS
 cpulimit: 1
 icon: Switch.png
@@ -414,7 +414,7 @@ Watch out for YAML: indent with spaces (never Tab) and always leave a space afte
 
 1. Open EVE-NG in your browser and log in.
 2. Open a lab and click **Add Node** (`+` icon).
-3. Search for **SwitchOS** and select version **1.0**.
+3. Search for **MikroTik SwitchOS** and select version **1.0**.
 4. Click **Add**.
 
 Important points:
