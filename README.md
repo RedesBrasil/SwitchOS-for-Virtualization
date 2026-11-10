@@ -193,19 +193,10 @@ cp /opt/unetlab/html/includes/init.php.backup /opt/unetlab/html/includes/init.ph
 
 No EVE-NG 6 o template é um arquivo `.yml` e **não é preciso editar o `init.php`**.
 
-Descubra o processador do servidor:
+Crie o template na pasta `intel`:
 
 ```bash
-lscpu | grep -i vendor
-```
-
-- `AuthenticAMD`: use a pasta `amd`.
-- `GenuineIntel`: use a pasta `intel`.
-
-Crie o template na pasta correspondente (o exemplo usa `amd`; troque por `intel` se for o caso):
-
-```bash
-cat > /opt/unetlab/html/templates/amd/mk-switchos.yml << 'EOT'
+cat > /opt/unetlab/html/templates/intel/mk-switchos.yml << 'EOT'
 ---
 type: qemu
 description: MikroTik SwitchOS
@@ -220,7 +211,7 @@ qemu_arch: x86_64
 qemu_nic: virtio-net-pci
 qemu_options: -machine type=pc,accel=kvm -serial mon:stdio -nographic
 EOT
-ls -l /opt/unetlab/html/templates/amd/mk-switchos.yml
+ls -l /opt/unetlab/html/templates/intel/mk-switchos.yml
 ```
 
 Cuidado com o YAML: indente com espaços (nunca Tab) e sempre deixe um espaço depois dos dois pontos (`ram: 256`, e não `ram:256`).
@@ -378,19 +369,10 @@ cp /opt/unetlab/html/includes/init.php.backup /opt/unetlab/html/includes/init.ph
 
 On EVE-NG 6 the template is a `.yml` file and you **do not need to edit `init.php`**.
 
-Check the server CPU vendor:
+Create the template in the `intel` folder:
 
 ```bash
-lscpu | grep -i vendor
-```
-
-- `AuthenticAMD`: use the `amd` folder.
-- `GenuineIntel`: use the `intel` folder.
-
-Create the template in the matching folder (the example uses `amd`; use `intel` if needed):
-
-```bash
-cat > /opt/unetlab/html/templates/amd/mk-switchos.yml << 'EOT'
+cat > /opt/unetlab/html/templates/intel/mk-switchos.yml << 'EOT'
 ---
 type: qemu
 description: MikroTik SwitchOS
@@ -405,7 +387,7 @@ qemu_arch: x86_64
 qemu_nic: virtio-net-pci
 qemu_options: -machine type=pc,accel=kvm -serial mon:stdio -nographic
 EOT
-ls -l /opt/unetlab/html/templates/amd/mk-switchos.yml
+ls -l /opt/unetlab/html/templates/intel/mk-switchos.yml
 ```
 
 Watch out for YAML: indent with spaces (never Tab) and always leave a space after the colon (`ram: 256`, not `ram:256`).
