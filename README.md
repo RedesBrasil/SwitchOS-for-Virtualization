@@ -193,10 +193,25 @@ cp /opt/unetlab/html/includes/init.php.backup /opt/unetlab/html/includes/init.ph
 
 No EVE-NG 6 o template é um arquivo `.yml` e **não é preciso editar o `init.php`**.
 
-Crie o template na pasta `intel`:
+Verifique a arquitetura do servidor:
 
 ```bash
-cat > /opt/unetlab/html/templates/intel/mk-switchos.yml << 'EOT'
+cat /opt/unetlab/platform
+```
+
+- Se mostrar `vmx`: a pasta é `intel`.
+- Se mostrar `svm`: a pasta é `amd`.
+
+Defina a pasta correspondente (use `intel` ou `amd`):
+
+```bash
+PASTA=intel
+```
+
+Crie o template:
+
+```bash
+cat > /opt/unetlab/html/templates/$PASTA/mk-switchos.yml << 'EOT'
 ---
 type: qemu
 description: MikroTik SwitchOS
@@ -211,7 +226,7 @@ qemu_arch: x86_64
 qemu_nic: virtio-net-pci
 qemu_options: -machine type=pc,accel=kvm -serial mon:stdio -nographic
 EOT
-ls -l /opt/unetlab/html/templates/intel/mk-switchos.yml
+ls -l /opt/unetlab/html/templates/$PASTA/mk-switchos.yml
 ```
 
 Cuidado com o YAML: indente com espaços (nunca Tab) e sempre deixe um espaço depois dos dois pontos (`ram: 256`, e não `ram:256`).
@@ -369,10 +384,25 @@ cp /opt/unetlab/html/includes/init.php.backup /opt/unetlab/html/includes/init.ph
 
 On EVE-NG 6 the template is a `.yml` file and you **do not need to edit `init.php`**.
 
-Create the template in the `intel` folder:
+Check the server architecture:
 
 ```bash
-cat > /opt/unetlab/html/templates/intel/mk-switchos.yml << 'EOT'
+cat /opt/unetlab/platform
+```
+
+- If it shows `vmx`: the folder is `intel`.
+- If it shows `svm`: the folder is `amd`.
+
+Set the matching folder (use `intel` or `amd`):
+
+```bash
+FOLDER=intel
+```
+
+Create the template:
+
+```bash
+cat > /opt/unetlab/html/templates/$FOLDER/mk-switchos.yml << 'EOT'
 ---
 type: qemu
 description: MikroTik SwitchOS
@@ -387,7 +417,7 @@ qemu_arch: x86_64
 qemu_nic: virtio-net-pci
 qemu_options: -machine type=pc,accel=kvm -serial mon:stdio -nographic
 EOT
-ls -l /opt/unetlab/html/templates/intel/mk-switchos.yml
+ls -l /opt/unetlab/html/templates/$FOLDER/mk-switchos.yml
 ```
 
 Watch out for YAML: indent with spaces (never Tab) and always leave a space after the colon (`ram: 256`, not `ram:256`).
