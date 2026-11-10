@@ -139,7 +139,7 @@ cat > /opt/unetlab/html/templates/mk-switchos.php << 'EOT'
 # vim: syntax=php tabstop=4 softtabstop=0 noexpandtab laststatus=1 ruler
 
 $p['type'] = 'qemu';
-$p['name'] = 'SwitchOS for Virtualization';
+$p['name'] = 'SwitchOS';
 $p['cpulimit'] = 1;
 $p['icon'] = 'Switch.png';
 $p['cpu'] = 1;
