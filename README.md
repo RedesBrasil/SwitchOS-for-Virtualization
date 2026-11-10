@@ -52,14 +52,14 @@ The image has both a **GUI** (web interface) and a **CLI** (console), even thoug
 
 ### Créditos
 
-Criado por **Matheus Salvador** e **[Redes Brasil](https://www.redesbrasil.com)**.
+Criado por **[Matheus Salvador](https://github.com/SalvadorJr33)** e **[Redes Brasil](https://www.redesbrasil.com)**.
 
 </td>
 <td valign="top">
 
 ### Credits
 
-Created by **Matheus Salvador** and **[Redes Brasil](https://www.redesbrasil.com)**.
+Created by **[Matheus Salvador](https://github.com/SalvadorJr33)** and **[Redes Brasil](https://www.redesbrasil.com)**.
 
 </td>
 </tr>
